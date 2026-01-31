@@ -47,11 +47,16 @@ export function getPreviousTier(current: TierLevel): TierLevel | null {
 
 export function calculateTier(totalSpent: number, visitCount: number): TierLevel {
   // Check from highest tier to lowest
+  // Uses OR logic per SPEC: meet EITHER visit OR spending threshold
   for (let i = TIER_ORDER.length - 1; i >= 0; i--) {
     const tier = TIER_ORDER[i];
     const threshold = TIER_THRESHOLDS[tier];
 
-    if (totalSpent >= threshold.spent && visitCount >= threshold.visits) {
+    // Skip explorador (default tier)
+    if (tier === 'explorador') continue;
+
+    // Promote if EITHER spending OR visit threshold is met
+    if (totalSpent >= threshold.spent || visitCount >= threshold.visits) {
       return tier;
     }
   }
