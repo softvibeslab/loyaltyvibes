@@ -1,0 +1,9 @@
+project:
+  name: loyaltyvibes
+  description: ''
+  type: ''
+  locale: '{{LOCALE}}'
+  created_at: '2026-01-24T11:29:34.700940Z'
+  initialized: 'true'
+github:
+  profile_name: ''
