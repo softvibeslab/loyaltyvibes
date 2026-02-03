@@ -1,7 +1,7 @@
 import React from 'react';
 import { ConfirmDialogProps } from './ConfirmDialog.types';
-import { Modal } from '../Modal/Modal';
-import { Button } from '../../../Button/Button';
+import { Modal } from '@/shared/components/ui/overlays/Modal';
+import { Button } from '@/shared/components/ui/Button';
 
 /**
  * Componente ConfirmDialog para acciones destructivas
